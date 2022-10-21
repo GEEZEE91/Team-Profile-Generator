@@ -1,0 +1,14 @@
+.jumbotron{
+    background-color: darkblue;
+}
+
+.employee-card{
+    margin: 1vw;
+    background-color: deepskyblue;
+    min-width: 15vw;
+    text-align: center;
+}
+.card-header {
+    color: aliceblue;
+    background: #0183fb;
+}
