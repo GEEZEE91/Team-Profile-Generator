@@ -7,8 +7,20 @@
     background-color: deepskyblue;
     min-width: 15vw;
     text-align: center;
+    padding: 0;
+
+  
 }
 .card-header {
     color: aliceblue;
     background: #0183fb;
+ min-height: 9.5vh;
+ justify-content: center;
+ align-items: center;
+
+}
+
+.card-body{
+    font-size: 1.4rem;
+    color: rgb(1, 35, 65);
 }
