@@ -1,5 +1,4 @@
 // specify modules needed for team profile generator to work
-
 const Manager = require("./src/Manager");
 const Engineer = require("./src/Engineer");
 const Intern = require("./src/Intern");
@@ -11,17 +10,10 @@ const generateHTML = require('./lib/generateHTML');
 
 let EmployeeArray = [];
 
-// prompt initial question
-const role = [
-    {
-      type: 'list',
-      name: 'role',
-      message: 'Please choose the role of the employee are adding.',
-      choices: ['Manager', 'Engineer', 'Intern', 'Team Finished']
-    }
-  ];
- // prompt for manager questions
-const manager = [
+
+// prompt initial manager questions
+const promptUser = () => {
+  inquirer.prompt([
     {
       type: 'input',
       name: 'name',
@@ -42,11 +34,41 @@ const manager = [
       name: 'officeNumber',
       message: 'What is the Managers Office Number?'
     }
-  
-  ];
-  
-  // prompt for questions
-  const engineer = [
+  ])
+   .then(answers => {
+          const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+          EmployeeArray.push(manager);
+          role();
+      })
+}
+
+role = () => {
+  inquirer.prompt([
+      {
+          type: "list",
+          message: "Please choose the role of the employee you are adding",
+          choices: ["Engineer", "Intern", "Team Finished"],
+          name: "role"
+      }
+  ])
+      .then(answers => {
+          switch (answers.role) {
+              case "Engineer":
+                  addEngineer();
+                  break;
+              case "Intern":
+                  addIntern();
+                  break;
+              case "Team Finished":
+                console.log(EmployeeArray);
+                generateTeam();
+                  break;
+          }
+      })
+}
+
+addEngineer = () => {
+  inquirer.prompt([
     {
       type: 'input',
       name: 'name',
@@ -67,11 +89,16 @@ const manager = [
       name: 'github',
       message: 'What is their GITHUB username?'
     }
-  
-  ];
-  
-  // prompt for questions
-  const intern = [
+  ])
+      .then(answers => {
+          const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+          EmployeeArray.push(engineer);
+          role();
+      })
+}
+
+addIntern = () => {
+  inquirer.prompt([
     {
       type: 'input',
       name: 'name',
@@ -92,48 +119,17 @@ const manager = [
       name: 'school',
       message: 'What SCHOOL did the Intern attend?'
     }
-  ];
-  
-   
-  // start app & prompt questions
-function init() {
-    inquirer.prompt(role).then(answers => {
-      // finished adding employees make team
-      if (answers.role === 'Team Finished') {
-        console.log(EmployeeArray);
-        generateTeam();
-        return;
-      }
-      // manager, engineer and intern info 
-      if (answers.role === 'Manager') {
-        inquirer.prompt(manager).then(answers => {
-          const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-          EmployeeArray.push(manager);
-          init();
-        })
-      }
-
-      if (answers.role === 'Engineer') {
-        inquirer.prompt(engineer).then(answers => {
-          const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
-          EmployeeArray.push(engineer);
-          init();
-        })
-      }
-
-      if (answers.role === 'Intern') {
-        inquirer.prompt(intern).then(answers => {
+  ])
+      .then(answers => {
           const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
           EmployeeArray.push(intern);
-          init();
-        })
-      }
-    })
-  }; 
-
-  init();
+          role();
+      })
+}
 
   function generateTeam() {
     fs.writeFileSync('./dist/teamindex.html', generateHTML(EmployeeArray));
     console.log('Team Generated');
-  };
+  }
+
+  promptUser();
