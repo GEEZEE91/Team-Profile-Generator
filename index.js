@@ -72,7 +72,7 @@ addEngineer = () => {
     {
       type: 'input',
       name: 'name',
-      message: "What is thr Engineers NAME?",
+      message: "What is the Engineers NAME?",
     },
     {
       type: 'number',
