@@ -40,7 +40,9 @@
 
 ![Generated Team](https://user-images.githubusercontent.com/3950562/197588957-7a638620-58d9-4c29-9720-7a661c7547c5.png)
 
-![teamgenerator](https://github.com/GEEZEE91/Team-Profile-Generator/blob/main/assets/teamgenerator.mp4)
+Video Link to how the application can be used
+https://github.com/GEEZEE91/Team-Profile-Generator/blob/main/assets/teamgenerator.mp4
+
   ## Tests
     npm test
 ![image](https://user-images.githubusercontent.com/3950562/197588621-75746710-2f66-4e00-9f39-9f999b5bf178.png)
