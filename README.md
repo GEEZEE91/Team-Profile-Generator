@@ -18,7 +18,10 @@
 
   ## Installation 
   Clone the repo
-    Open terminal run npm i
+  
+    Open terminal run 
+    
+    npm i
 
   ## Usage 
   Run in terminal
@@ -28,10 +31,19 @@
   Follow prompts and answer questions in regards to you team.
   First enter Team Manager information.
   
-  Than add as many Engineers and/or Interns as your team requires.
 
+  Than add as many Engineers and/or Interns as your team requires. 
+  
+  Once finished adding team members select Generate Team and a HTML page with employee cards, based on the answers provided in generated.
+  
+![Terminal ](https://user-images.githubusercontent.com/3950562/197588925-cf108e92-32f8-492d-ae47-f35b631bc6fe.png)
+
+![Generated Team](https://user-images.githubusercontent.com/3950562/197588957-7a638620-58d9-4c29-9720-7a661c7547c5.png)
+
+![teamgenerator](https://github.com/GEEZEE91/Team-Profile-Generator/blob/main/assets/teamgenerator.mp4)
   ## Tests
     npm test
+![image](https://user-images.githubusercontent.com/3950562/197588621-75746710-2f66-4e00-9f39-9f999b5bf178.png)
 
-  ## Questions
+## Questions
   If you have any questions about this projects, please contact me directly at gina.zivkovic91@gmail.com. You can view more of my projects at https://github.com/geezee91.
