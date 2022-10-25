@@ -17,24 +17,28 @@
   Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
 
   ## Installation 
-  Clone the repo
+  First step, clone the repo 
   
-    Open terminal run 
+    git clone https://github.com/GEEZEE91/Team-Profile-Generator.git
+  
+  Open command line terminal and install dependencies
     
     npm i
 
   ## Usage 
-  Run in terminal
+  To use the app run the below command in the terminal
   
     node index.js
 
   Follow prompts and answer questions in regards to you team.
+  
   First enter Team Manager information.
   
-
   Than add as many Engineers and/or Interns as your team requires. 
   
-  Once finished adding team members select Generate Team and a HTML page with employee cards, based on the answers provided in generated.
+  Once finished adding team members select Generate Team option and a HTML page with employee cards, based on the answers provided in generated.
+  
+  The generated HTML can be found under ./dist/teamindex.html
   
 ![Terminal ](https://user-images.githubusercontent.com/3950562/197588925-cf108e92-32f8-492d-ae47-f35b631bc6fe.png)
 
@@ -44,7 +48,11 @@ Video Link to how the application can be used
 https://github.com/GEEZEE91/Team-Profile-Generator/blob/main/assets/teamgenerator.mp4
 
   ## Tests
+Once dependencies are installed the user can run the command below
+
     npm test
+All tests should PASS
+
 ![image](https://user-images.githubusercontent.com/3950562/197588621-75746710-2f66-4e00-9f39-9f999b5bf178.png)
 
 ## Questions
