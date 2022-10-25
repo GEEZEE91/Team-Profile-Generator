@@ -10,7 +10,11 @@ The app will prompt the user for info regarding the team manager and then subseq
 
 The app is currently built with a software engineering team in mind however this can be used as a template and changed to represent the team you are creating.
 
-  ## Table of Contents
+#### Deployed Link 
+  
+     https://geezee91.github.io/Team-Profile-Generator/dist/teamindex
+ 
+ ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
   * [Tests](#tests)
